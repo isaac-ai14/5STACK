@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>5STACK - CONTATO</title>
+        <link rel="icon" type="image/png" href="5stack.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+        <link rel="stylesheet" href="5stack.css">
+    </head>
+    <body>
+        <header class="principal">
+            <div class="logo-container">
+                <img src="5stacklogo.png" alt="5STACK Logo" class="logo-img">
+                <h1>5STACK</h1>
+                <nav class="menu-navegacao">
+                    <a href="5StackPrincipal.html" class="link-header">INÍCIO</a>
+                    <a href="5StackQuemSomos.html" class="link-header">QUEM SOMOS</a>
+                    <a href="5StackContato.html" class="link-header">CONTATO</a>
+                </nav>
+            </div>
+        </header>
+        <main class="conteudo-pagina">
+            <h2 class="pagina">FALE CONOSCO</h2>
+            <p class="subtitulo-contato">Preencha o formulário abaixo para enviar dúvidas, sugestões ou suporte para nossa equipe:</p>
+
+            <div class="caixa-formulario">
+                <form action="#" method="POST" class="formulario-contato">
+                    <div class="campo-grupo">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome no jogo ou nome real" required>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="email">E-mail de Contato</label>
+                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione um assunto...</option>
+                            <option value="duvida">Dúvida sobre o Matchmaking</option>
+                            <option value="suporte">Suporte Técnico</option>
+                            <option value="denuncia">Denúncia de Jogador</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="mensagem">Sua Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua pergunta ou mensagem aqui..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">ENVIAR MENSAGEM</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

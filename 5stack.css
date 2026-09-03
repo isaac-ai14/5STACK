@@ -1,0 +1,299 @@
+body {
+    background-color: rgb(45, 51, 56);
+    color:white;
+    margin: 0;
+}
+
+
+
+.principal {
+    background-color: rgb(20, 18, 18);
+    padding: 20px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que fique por cima de tudo */
+    box-sizing: border-box;
+}
+
+.principal h1 {
+    font-family: 'Anton', sans-serif;
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 40px;
+    margin: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 65px;
+    width: auto;
+}
+
+.lobby {
+    text-align: center;
+    margin-top: 130px;
+    margin-bottom: 60px;
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+}
+
+
+.container-jogadores {
+    display: flex;
+    justify-content: center;
+    gap: 85px;
+    text-align: center;
+}
+
+.party {
+    border: 2px solid black;
+    position: relative;
+    width: 200px;
+    height:500px;
+    overflow: hidden;
+}
+
+.cardbanner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.nome-jogador {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 12px 0;
+}
+
+.party-convidar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed gray;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.container-encontrar {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.encontrar {
+    background-color: rgb(126, 19, 19);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px 40px;
+    border: 1px solid white;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.encontrar:hover {
+    background-color: #a31818;
+}
+
+
+.link-header {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.link-header:hover {
+    color: rgb(126, 19, 19); /* Muda de cor ao passar o mouse */
+}
+
+.menu-navegacao {
+    display: flex;
+    gap: 30px;
+}
+
+.pagina {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 36px;
+    margin: 0;
+}
+
+.sobre {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.8;
+    text-align: justify; /* Garante alinhamento uniforme nas margens */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.sobre strong {
+    color: #ffffff;
+}
+
+/* Espaçamento geral da página para não cobrir o conteúdo com o header fixo */
+.conteudo-pagina {
+    margin-top: 140px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.subtitulo-contato {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #cccccc;
+    margin-bottom: 40px;
+}
+
+/* Container que alinha os blocos de contato lado a lado */
+.container-contatos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+/* Cada bloco individual de canal de contato */
+.cartao-contato {
+    background-color: #141212;
+    border: 1px solid #7E1313;
+    padding: 25px 30px;
+    width: 220px;
+    text-align: center;
+}
+
+.cartao-contato h3 {
+    font-family: 'Anton', sans-serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.cartao-contato p {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #7E1313;
+    font-weight: bold;
+    margin: 0;
+}
+
+.conteudo-quemsomos {
+    margin-top: 140px;
+    margin-bottom: 60px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.caixa-texto {
+    background-color: #141212;
+    border: 1px solid #7E1313;
+    max-width: 800px;
+    margin: 30px auto 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.caixa-formulario {
+    background-color: #141212;
+    border: 1px solid #7E1313;
+    max-width: 600px;
+    margin: 30px auto 50px auto;
+    padding: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.formulario-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-grupo label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+    background-color: rgb(45, 51, 56);
+    border: 1px solid #444;
+    color: #ffffff;
+    padding: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+    outline: none;
+    border-color: #7E1313;
+}
+
+.btn-enviar {
+    background-color: rgb(126, 19, 19);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    border: 1px solid white;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #a31818;
+}
