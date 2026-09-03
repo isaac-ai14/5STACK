@@ -25,4 +25,4 @@ Para rodar o projeto localmente na sua máquina, siga os passos abaixo:
 
 1. **Baixe ou clone este repositório:**
    ```bash
-   git clone [https://github.com/SEU_USUARIO/5STACK.git](https://github.com/SEU_USUARIO/5STACK.git)
+   git clone https://github.com/isaac-ai14/5STACK.git
