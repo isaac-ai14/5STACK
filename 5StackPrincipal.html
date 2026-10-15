@@ -6,7 +6,7 @@
         <link rel="icon" href="imagens/5stacklogo.png" type="image/png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
         <link rel="stylesheet" href="5stack.css">
-        <script src="5stack.js"></script>
+        <script src="5stack.js" defer></script>
     </head>
     <body>
         <header class="principal">
@@ -53,6 +53,25 @@
 
                 <h2>CONVIDAR JOGADORES</h2>
 
+                <form id="form-jogador">
+                <input type="text" id="nome-jogador-crud" placeholder="Nome do jogador" required>
+
+                <select id="elo-jogador-crud" required>
+                    <option value="">Selecione o elo</option>
+                    <option value="Ferro">Ferro</option>
+                    <option value="Bronze">Bronze</option>
+                    <option value="Prata">Prata</option>
+                    <option value="Ouro">Ouro</option>
+                    <option value="Platina">Platina</option>
+                    <option value="Diamante">Diamante</option>
+                    <option value="Ascendente">Ascendente</option>
+                    <option value="Imortal">Imortal</option>
+                    <option value="Radiante">Radiante</option>
+                </select>
+
+                <button type="submit">Adicionar jogador</button>
+            </form>
+
                 <div id="lista-jogadores"></div>
 
                 <p id="notificacao-convite" role="status" aria-live="polite"></p>
@@ -61,4 +80,3 @@
 
     </body>
 </html>
-
