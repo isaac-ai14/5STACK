@@ -6,6 +6,7 @@
         <link rel="icon" type="image/png" href="5stack.png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
         <link rel="stylesheet" href="5stack.css">
+        <script src="5stack.js"></script>
     </head>
     <body>
         <header class="principal">
@@ -24,7 +25,7 @@
             <p class="subtitulo-contato">Preencha o formulário abaixo para enviar dúvidas, sugestões ou suporte para nossa equipe:</p>
 
             <div class="caixa-formulario">
-                <form action="#" method="POST" class="formulario-contato">
+                <form class="formulario-contato" id="formulario-contato">
                     <div class="campo-grupo">
                         <label for="nome">Nome Completo</label>
                         <input type="text" id="nome" name="nome" placeholder="Seu nome no jogo ou nome real" required>
@@ -52,6 +53,7 @@
                     </div>
 
                     <button type="submit" class="btn-enviar">ENVIAR MENSAGEM</button>
+                    <p id="mensagem-status" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </main>

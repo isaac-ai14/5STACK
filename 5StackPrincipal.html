@@ -6,6 +6,7 @@
         <link rel="icon" href="imagens/5stacklogo.png" type="image/png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
         <link rel="stylesheet" href="5stack.css">
+        <script src="5stack.js"></script>
     </head>
     <body>
         <header class="principal">
@@ -38,11 +39,26 @@
                 <img src="imagens/cardbanner4.jpg" alt="Card Banner" class="cardbanner">
                 <div class="nome-jogador">Eduardo</div>
             </div>
-            <div class="party party-convidar">+ Convidar</div>
+            <div class="party party-convidar" id="abrir-convites">
+                + Convidar
+            </div>
         </div>
         <div class="container-encontrar">
             <button class="encontrar">ENCONTRAR JOGADOR</button>
         </div>
+
+        <div class="modal" id="modal-convites">
+            <div class="modal-conteudo">
+                <button class="fechar-modal" id="fechar-modal">X</button>
+
+                <h2>CONVIDAR JOGADORES</h2>
+
+                <div id="lista-jogadores"></div>
+
+                <p id="notificacao-convite" role="status" aria-live="polite"></p>
+            </div>
+        </div>
+
     </body>
 </html>
 
