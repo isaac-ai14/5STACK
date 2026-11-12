@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5STACK - Administração</title>
+
+    <link rel="icon" href="imagens/5stacklogo.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+    <link rel="stylesheet" href="5stack.css">
+    <script src="admin.js" defer></script>
+</head>
+
+<body>
+    <header class="principal">
+        <div class="logo-container">
+            <img src="imagens/5stacklogo.png" alt="5STACK Logo" class="logo-img">
+            <h1>5STACK</h1>
+
+            <nav class="menu-navegacao">
+                <a href="5StackPrincipal.html" class="link-header">INÍCIO</a>
+                <a href="5StackQuemSomos.html" class="link-header">QUEM SOMOS</a>
+                <a href="5StackContato.html" class="link-header">CONTATO</a>
+                <a href="5StackAdmin.html" class="link-header">ADMIN</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="conteudo-pagina">
+
+        <h2 class="pagina">PAINEL ADMINISTRATIVO</h2>
+
+        <p>Gerenciamento de jogadores cadastrados no Five Stack.</p>
+
+        <!-- BOTÃO PARA INICIAR UM NOVO CADASTRO -->
+        <button id="btn-adicionar" type="button" class="btn-enviar">
+            ADICIONAR JOGADOR
+        </button>
+
+        <!-- FORMULÁRIO -->
+        <div class="caixa-formulario">
+
+            <h2>CADASTRAR / EDITAR JOGADOR</h2>
+
+            <form id="form-cadastro" class="formulario-contato">
+
+                <div class="campo-grupo">
+                    <label for="game_name">Nickname</label>
+                    <input
+                        type="text"
+                        id="game_name"
+                        placeholder="Nome no Valorant"
+                        required
+                    >
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="tag_line">Tag</label>
+                    <input
+                        type="text"
+                        id="tag_line"
+                        placeholder="BR1"
+                        required
+                    >
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="jogador@email.com"
+                        required
+                    >
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite uma senha"
+                        required
+                    >
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="rank_id">Rank</label>
+
+                    <select id="rank_id" required>
+                        <option value="">Selecione seu rank</option>
+
+                        <option value="1">Ferro 1</option>
+                        <option value="2">Ferro 2</option>
+                        <option value="3">Ferro 3</option>
+
+                        <option value="4">Bronze 1</option>
+                        <option value="5">Bronze 2</option>
+                        <option value="6">Bronze 3</option>
+
+                        <option value="7">Prata 1</option>
+                        <option value="8">Prata 2</option>
+                        <option value="9">Prata 3</option>
+
+                        <option value="10">Ouro 1</option>
+                        <option value="11">Ouro 2</option>
+                        <option value="12">Ouro 3</option>
+
+                        <option value="13">Platina 1</option>
+                        <option value="14">Platina 2</option>
+                        <option value="15">Platina 3</option>
+
+                        <option value="16">Diamante 1</option>
+                        <option value="17">Diamante 2</option>
+                        <option value="18">Diamante 3</option>
+
+                        <option value="19">Ascendente 1</option>
+                        <option value="20">Ascendente 2</option>
+                        <option value="21">Ascendente 3</option>
+
+                        <option value="22">Imortal 1</option>
+                        <option value="23">Imortal 2</option>
+                        <option value="24">Imortal 3</option>
+
+                        <option value="25">Radiante</option>
+                    </select>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="rr_atual">RR Atual</label>
+                    <input
+                        type="number"
+                        id="rr_atual"
+                        min="0"
+                        value="0"
+                        required
+                    >
+                </div>
+
+                <!-- BOTÃO DE CADASTRAR / SALVAR -->
+                <button type="submit" class="btn-enviar">
+                    CADASTRAR JOGADOR
+                </button>
+
+                <p id="mensagem-cadastro" role="status" aria-live="polite"></p>
+
+            </form>
+        </div>
+
+        <!-- LISTA DE JOGADORES -->
+        <h2 class="pagina">JOGADORES CADASTRADOS</h2>
+
+        <div id="lista-usuarios">
+            <!-- Jogadores carregados pela API -->
+        </div>
+
+    </main>
+</body>
+</html>

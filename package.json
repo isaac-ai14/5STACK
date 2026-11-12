@@ -1,0 +1,26 @@
+{
+  "name": "5stack-github",
+  "version": "1.0.0",
+  "description": "O **5STACK** é uma plataforma web desenvolvida para jogadores de **VALORANT** encontrarem parceiros de equipe (*duos* ou *squads*) com base no seu nível de habilidade, função e compatibilidade dentro do jogo, reduzindo a aleatoriedade na formação de equipes e proporcionando uma experiência mais organizada para partidas ranqueadas.",
+  "main": "5stack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaac-ai14/5STACK.git"
+  },
+  "keywords": [],
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/isaac-ai14/5STACK/issues"
+  },
+  "homepage": "https://github.com/isaac-ai14/5STACK#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  }
+}
