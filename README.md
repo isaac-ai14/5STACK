@@ -1,71 +1,173 @@
-# 🎮 5STACK
+# 5STACK
 
-O **5STACK** é uma plataforma web desenvolvida para jogadores de **VALORANT** encontrarem parceiros de equipe (*duos* ou *squads*) com base no seu nível de habilidade, função e compatibilidade dentro do jogo, reduzindo a aleatoriedade na formação de equipes e proporcionando uma experiência mais organizada para partidas ranqueadas.
+O **5STACK** é um projeto desenvolvido para facilitar a conexão entre jogadores de Valorant, ajudando a encontrar pessoas e formar grupos com interesses e características compatíveis.
 
----
+A proposta é tornar mais fácil encontrar jogadores considerando critérios como patente, função e estilo de jogo.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias utilizadas
 
-- **HTML5**: Estruturação e marcação do conteúdo.
-- **CSS3**: Estilização, responsividade, layout com Flexbox e efeitos visuais customizados.
-- **JavaScript**: Manipulação do DOM, eventos, validação de formulários e funcionalidades interativas.
-- **LocalStorage**: Armazenamento local dos dados dos jogadores no navegador.
-- **Git e GitHub**: Controle de versão e colaboração no desenvolvimento do projeto.
+### Front-end
+- HTML5
+- CSS3
+- JavaScript
 
----
+### Back-end
+- Node.js
+- Express
+- PostgreSQL
+- `pg` para conexão com o banco de dados
+- `bcrypt` para criptografia de senhas
 
-## ⚙️ Funcionalidades Implementadas
+## Estrutura do projeto
 
-Atualmente, o projeto possui:
+```text
+5STACK/
+├── backend/
+│   └── src/
+│       ├── app.js
+│       ├── db.js
+│       └── routes/
+│           └── usuarios.js
+├── database/
+│   └── 01_estrutura_5stack_pg.sql
+├── frontend/
+│   ├── imagens/
+│   ├── 5StackPrincipal.html
+│   ├── 5StackContato.html
+│   ├── 5StackQuemSomos.html
+│   ├── 5StackAdmin.html
+│   ├── 5stack.css
+│   ├── 5stack.js
+│   └── admin.js
+├── package.json
+└── README.md
+```
 
-- Página inicial com lobby de jogadores;
-- Janela para visualização e convite de jogadores;
-- Cadastro local de jogadores;
-- Listagem dinâmica de jogadores;
-- Edição de jogadores cadastrados;
-- Exclusão de jogadores;
-- Persistência dos dados utilizando `localStorage`;
-- Formulário de contato com validação;
-- Mensagens de confirmação utilizando JavaScript;
-- Interface responsiva para desktop e dispositivos móveis.
+## Funcionalidades implementadas
 
-O gerenciamento local de jogadores implementa as operações básicas de **CRUD**:
+- **Página principal:** apresentação dos jogadores e funcionalidades de interação.
+- **Cadastro e gerenciamento de jogadores:** operações de cadastro, edição, exclusão e listagem na página principal, utilizando `localStorage`.
+- **Painel administrativo:** gerenciamento de usuários integrado à API REST.
+- **Página de contato:** formulário com validação em JavaScript.
+- **Página Quem Somos:** apresentação do projeto e da equipe.
+- **API REST:** permite cadastrar, consultar, atualizar e excluir usuários.
+- **Banco de dados:** estrutura em PostgreSQL para armazenar os dados do sistema.
 
-- **Create** — cadastrar jogador;
-- **Read** — visualizar jogadores;
-- **Update** — editar jogador;
-- **Delete** — excluir jogador.
+## API REST
 
----
+A API foi desenvolvida utilizando Node.js e Express, com integração ao PostgreSQL.
 
-## 🚧 Funcionalidades Planejadas
+A aplicação utiliza a porta `3000` e disponibiliza as seguintes rotas:
 
-Entre as próximas funcionalidades previstas para o 5STACK estão:
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/usuarios` | Lista todos os usuários |
+| GET | `/usuarios/:id` | Consulta um usuário pelo ID |
+| POST | `/usuarios` | Cadastra um novo usuário |
+| PUT | `/usuarios/:id` | Atualiza os dados de um usuário |
+| DELETE | `/usuarios/:id` | Exclui um usuário |
 
-- Perfil completo dos jogadores;
-- Busca e recomendação de jogadores por compatibilidade;
-- Sistema de avaliações e reputação;
-- Preenchimento dinâmico das vagas do lobby;
-- Melhorias no sistema de convites;
-- Integração futura com banco de dados e back-end.
+O painel administrativo utiliza `fetch()` e `async/await` para realizar as requisições à API.
 
----
+## Como executar o projeto
 
-## 🚀 Como Executar o Projeto no Computador
+### 1. Pré-requisitos
 
-Para rodar o projeto localmente na sua máquina, siga os passos abaixo.
+- Node.js instalado.
+- PostgreSQL instalado e configurado.
+- Visual Studio Code ou outro editor de código.
+- Extensão Live Server para executar o front-end.
 
-### Pré-requisitos
-
-- Um navegador web instalado, como Google Chrome, Microsoft Edge, Firefox ou Brave.
-- Git instalado, caso deseje clonar o repositório.
-- **Opcional:** VS Code com a extensão **Live Server** instalada.
-
----
-
-### Opção 1: Execução Direta
-
-1. **Baixe ou clone este repositório:**
+### 2. Clonar o repositório
 
 ```bash
 git clone https://github.com/isaac-ai14/5STACK.git
+```
+
+Entre na pasta do projeto:
+
+```bash
+cd 5STACK
+```
+
+### 3. Instalar as dependências
+
+Na pasta principal do projeto, execute:
+
+```bash
+npm install
+```
+
+### 4. Configurar o banco de dados
+
+Crie um banco de dados PostgreSQL com o nome `5stack`.
+
+Em seguida, execute o arquivo SQL:
+
+```text
+database/01_estrutura_5stack_pg.sql
+```
+
+Esse arquivo contém a estrutura das tabelas utilizadas pelo sistema.
+
+### 5. Configurar as variáveis de ambiente
+
+Na raiz do projeto, crie um arquivo chamado `.env` e configure os dados de conexão com o PostgreSQL:
+
+```env
+DB_HOST=localhost
+DB_NAME=5stack
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=sua_senha
+```
+
+Substitua os valores conforme a configuração do seu PostgreSQL.
+
+**Importante:** não compartilhe nem envie o arquivo `.env` para o GitHub, pois ele contém informações privadas de acesso ao banco de dados.
+
+### 6. Iniciar o back-end
+
+Na pasta principal do projeto, execute:
+
+```bash
+node backend/src/app.js
+```
+
+A API ficará disponível em:
+
+```text
+http://localhost:3000
+```
+
+### 7. Executar o front-end
+
+Abra a pasta do projeto no Visual Studio Code e utilize o Live Server para executar os arquivos HTML da pasta `frontend`.
+
+Para testar a integração com a API, abra:
+
+```text
+frontend/5StackAdmin.html
+```
+
+O Live Server deve utilizar o endereço `http://127.0.0.1:5500`, conforme a configuração de CORS do back-end.
+
+## Banco de dados
+
+O projeto utiliza PostgreSQL para armazenar informações relacionadas aos usuários e à estrutura do sistema.
+
+O script de criação do banco contém tabelas relacionadas a:
+
+- Usuários;
+- Patentes;
+- Funções;
+- Relação entre usuários e funções;
+- Lobbies;
+- Membros dos lobbies;
+- Convites.
+
+## Equipe de desenvolvimento
+
+Projeto acadêmico desenvolvido como parte do curso de Análise e Desenvolvimento de Sistemas.
+
+**Repositório:** [GitHub - 5STACK](https://github.com/isaac-ai14/5STACK)
